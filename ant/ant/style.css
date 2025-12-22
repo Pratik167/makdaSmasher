@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    overflow: hidden;
+}
+
+#canvas {
+    border: 1px solid black;
+    background: url("./background.jpg");
+    background-size: contain;
+}
+
+#antCount{
+    position: absolute;
+    top: 10;
+    left: 20;
+    font-size: 40;
+}
+
+#timer{
+    position: absolute;
+    top: 10;
+    left: 980;
+    font-size: 40;
+}
+
+#timeTaken{
+    position: absolute;
+    top: 10;
+    left: 500;
+    font-size: 40;
+}
