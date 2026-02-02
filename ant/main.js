@@ -55,13 +55,27 @@ function gameLoop() {
 
 gameLoop();
 
+let time = 0;
+let timerInterval;
+
+const timerDiv = document.getElementById("timer");
 
 
+timerInterval = setInterval(() => {
+    time++;
+    timerDiv.textContent = "Time: " + time + "s";
+}, 1000);
+
+const timeTaken= document.getElementById("timeTaken");
 canvas.addEventListener("click", function(event) {
    for(let i  = 0; i < ants.length; i++) {
     if(ants[i].isPointingAtMe(event.x, event.y,ctx)){
         n--;
         antCount.innerHTML="Remaining 🐜🐜🐜  :"+n;
+        if(n==0){
+            clearInterval(timerInterval);
+            timeTaken.textContent="Time Taken:"+time+"s";
+        }
         break;
     }
    }
@@ -78,7 +92,6 @@ setInterval(function() {
 }, 100)
 
 
-let time=0;
-const kick1=document.getElementById("kick1");
+
 
 
